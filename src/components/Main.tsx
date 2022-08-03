@@ -1,8 +1,12 @@
 import { useState } from "react";
+import {AnswerItemType}from "./AnswersItem"
 
 function Main() {
   // State for the challenge #3
   const [open, setOpen] = useState(false);
+
+  
+const[answer, setAnswer]=useState<AnswerItemType[]>([])
 
   return (
     <main className="main">
@@ -11,7 +15,24 @@ function Main() {
         {/* answers should go here */}
       </section>
       <section className="main__form">{/* a form should be here */}
-      <form className="form">
+      <form className="form" 
+      onSubmit={event=> {
+        event.preventDefault() 
+        let form:AnswerItemType={
+          review: event.target.review.value,
+          email: event.target.email.value,
+          username: event.target.username.value,
+          consistency: event.target.consistency.value,
+          colour: event.target.colour.value,
+          logo: event.target.logo.value,
+          bestFeatures: event.target.bestFeatures.value,
+          worstFeatures: event.target.worstFeatures.value,
+          timeSpent: event.target.timeSpent.value
+        }
+      setAnswer([...answer, form])
+      }}
+      
+      >
         <h2>Tell us what you think about you rubber duck!</h2>
        
         <h3>What would you saythat are the best features of your rubber duck?</h3>

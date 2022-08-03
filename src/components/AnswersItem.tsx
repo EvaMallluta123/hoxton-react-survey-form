@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ItemsList from "./ItemsList";
 
 export type AnswerItemType = {
@@ -11,7 +12,6 @@ export type AnswerItemType = {
     worstFeatures: [];
     timeSpent: [];
 }
-
 type Props = {
   answerItem: AnswerItemType;
 };
