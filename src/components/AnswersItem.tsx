@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ItemsList from "./ItemsList";
+import Main from "./Main"
 
 export type AnswerItemType = {
     review: string;
@@ -36,7 +37,7 @@ export default function AnswersItem({ answerItem }: Props) {
           <em>
             What would you say that are the best features of your rubber duck?
           </em>
-          <ItemsList list={bestFeatures} />
+          <ItemsList list={form.bestFeatures} />
         </p>
         <p>
           <em>
